@@ -1,10 +1,30 @@
-from stack import Stack
-from puzzle import Puzzle
+from eight_puzzle import Puzzle
 
 try:
     import pydot_ng as pydot
 except ImportError:
     import pydot
+
+
+class Stack:
+    def __init__(self):
+        self.items = []
+
+    def isEmpty(self):
+        return self.items == []
+
+    def push(self, item):
+        self.items.append(item)
+
+    def pop(self):
+        return self.items.pop()
+
+    def peek(self):
+        return self.items[len(self.items) - 1]
+
+    def size(self):
+        return len(self.items)
+
 
 s = Stack()
 explored = []
@@ -12,8 +32,8 @@ explored = []
 
 def dfs(initial_state):
     graph = pydot.Dot(graph_type='digraph', label="8 Puzzle State Space ("
-                                                  "DFS) \n Aashish Dhakal \n "
-                                                  "CE 4th Year \n Roll: 11",
+                                                  "DFS) \n Namit Adhikari \n "
+                                                  "CE 4th Year \n Roll: 05",
                       fontsize="30", color="red",
                       fontcolor="black", style="filled", fillcolor="black")
     start_node = Puzzle(initial_state, None, None, 0)

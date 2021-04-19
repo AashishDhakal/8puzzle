@@ -1,6 +1,6 @@
 from time import time
-from dfs import dfs
-from puzzle import Puzzle
+from depth_first_search import dfs
+from eight_puzzle import Puzzle
 
 initial_state = [2, 8, 3,
                  1, 6, 4,
